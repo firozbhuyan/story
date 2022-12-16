@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Explore Stories</title>
+
+	<meta name="description"
+		content="Display your posts in a masonry style grid. Also filter, sort and search your items." />
+
+	<link rel="icon" href="https://slwa.wa.gov.au/themes/custom/b4slwa/favicon/favicon.ico" type="image/png">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- needed for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+
+	<!-- Import font -->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+
+	<!-- Material Icon -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+	<!-- Style for Bootstrap -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+	<!-- Custom style for the demo-->
+	<link rel="stylesheet" href="css/demo.css">
+
+	<!-- Media Boxes CSS files -->
+	<link rel="stylesheet" href="plugin/components/Font Awesome/css/font-awesome.min.css">
+	<!-- only if you use Font Awesome -->
+	<link rel="stylesheet" href="plugin/components/Fancybox/jquery.fancybox.min.css"> <!-- only if you use fancybox -->
+	<link rel="stylesheet" type="text/css" href="plugin/css/mediaBoxes.css">
+
+	<style>
+		/* == LETS MODIFY SOME COLORS AND STYLE FOR THE DEMO == */
+
+		/* Style the search text field and the sort */
+		.media-boxes-search,
+		.media-boxes-sort {
+			float: right;
+		}
+
+		.media-boxes-search {
+			margin-left: 10px;
+		}
+
+		/* Remove the margin-bottom of the text */
+		.media-box-content .media-box-text {
+			margin-bottom: 0 !important;
+		}
+
+		/* Footer style */
+		.media-box-footer {
+			-webkit-box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+			box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+		}
+
+		.media-box-categories {
+			margin: 0;
+			font-size: 11px;
+			color: #777;
+		}
+
+		.media-box-date {
+			margin-bottom: 8px;
+		}
+
+		/* Style of date */
+		.media-box-date {
+			font-size: 11px;
+			color: #999;
+			margin: 3px 0 0 0;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="header fancybox-compensate-for-scrollbar">
+		<div class="content">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default">
+				<div class="container-fluid">
+
+					<!-- menu project name -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="./"><b>State Library of WA</b></a>
+					</div>
+
+					<!-- menu items -->
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="./">Explore Stories</a></li>
+							<li><a href="./">Share a Story</a></li>
+							<li><a href="./">Learn more</a></li>
+							<li><a href="./">Sign In/Sign Up</a></li>
+						</ul>
+					</div>
+					<!--/.nav-collapse -->
+				</div>
+				<!--/.container-fluid -->
+			</div>
+
+		</div>
+	</div>
+
+	<div class="grid-section">
+
+		<div class="content">
+			<h2>Member <strong>Memories</strong></h2>
+			<hr>
+		</div>
+
+		<div class="content grid-container">
+
+			<!--  ================== MEDIA BOXES ================== -->
+
+			<div class="filters-container">
+
+				<div class="media-boxes-search">
+					<span class="media-boxes-icon fa fa-search"></span>
+					<input type="text" id="search" placeholder="Search by title">
+					<span class="media-boxes-clear fa fa-close"></span>
+				</div>				
+
+				<ul class="media-boxes-filter" id="filter">
+					<li><a class="selected" href="#" data-filter=".Featured">Featured Stories</a></li>
+					<li><a href="#" data-filter="*">All Stories</a></li>
+				</ul>
+
+			</div>
+
+			<div id="grid">
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">"The Man Called Boy Who Named Himself"</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-1.jpg"></div>
+					</div>					
+					<div class="media-box-content">
+						<div class="media-box-text">It was not until I was 10 or 12 years old that I knew Uncle Charlie’s real name.  
+
+							His real name was Charles Kirkland, but his brothers and sisters called him “Boy” and I called him “Uncle Boy”.  And B</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Fred.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">Fred</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">Veterans</button></div>
+					</div>
+				</div>
+
+				
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box Featured">
+					<div class="media-box-content">
+						<div class="media-box-title">Mather School for Colored Girls, Norvel T Daniel superintendent,
+							page 59 of 133, games and stories of the students, 1938</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-14.jpg"></div>
+					</div>
+					<div class="media-box-footer"><span class="material-symbols-outlined">bookmark</span>
+						&nbsp;&nbsp;&nbsp;<b>Featured</b>
+					</div>
+					<div class="media-box-content">
+						<div class="media-box-text">Norvel T Daniel, my grandfather, was the superintendent of the
+							Mather School for Colored girls at the end of the 1930's. My grandmother Neva taught there
+							as well. I have uncovered from my family things Norvel's attempt to document the game.</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/holly.jpeg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">Holly</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">MotherSchool</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box Featured">
+					<div class="media-box-content">
+						<div class="media-box-title">Solidarity</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-15.jpg"></div>
+					</div>
+					<div class="media-box-footer"><span class="material-symbols-outlined">bookmark</span>
+						&nbsp;&nbsp;&nbsp;<b>Featured</b>
+					</div>
+					<div class="media-box-content">
+						<div class="media-box-text">As a University of Missouri professor, I was proud to support
+							#ConcernedStudent1950 activists who camped out on Carnahan Quad. . . Although women of color
+							were at the heart of this movement, many white faculty stood in solidarity. . . I spent hour
+						</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/NMAAHC.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								NMAAHC</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">Community</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box Featured">
+					<div class="media-box-content">
+						<div class="media-box-title">Black Catholics in Western North Carolina</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-16.jpg"></div>
+					</div>
+					<div class="media-box-footer"><span class="material-symbols-outlined">bookmark</span>
+						&nbsp;&nbsp;&nbsp;<b>Featured</b>
+					</div>
+					<div class="media-box-content">
+						<div class="media-box-text">During the year of 1934, the Franciscan Order sent Father Ronald
+							Scott on a mission to establish a Black Catholic parish in Asheville, North Carolina. St
+							Anthony of Padua Catholic Church & School opened its doors in 1936, in t</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Angela.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								Angela</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">Community</button><button type="button"
+								class="btn btn-default">Faith</button><button type="button"
+								class="btn btn-default">Religion</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">The Great-Great-Great-Great Grandson Of Plumb Sims</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-2.jpg"></div>
+					</div>
+					
+					<div class="media-box-content">						
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Christopher.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								
+Christopher D. Sims</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default"> Historic Moments</button><button type="button"
+								class="btn btn-default">Ancestry</button><button type="button"
+								class="btn btn-default">Literature</button><button type="button"
+								class="btn btn-default">Black Excellence</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">The Last One Standing - Major George W. Ford - 10th Cavalry, Company L, 1867</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-3.jpg"></div>
+					</div>
+					
+					<div class="media-box-content">						
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Christopher.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								
+Linda</strong></div>
+						<div class="media-box-categories"><button type="button"
+								class="btn btn-default">Military</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box Featured">
+					<div class="media-box-content">
+						<div class="media-box-title">Effects of Racism on a 15 Year Old Black Youth - A Poem</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-4.jpg"></div>
+					</div>
+					<div class="media-box-footer"><span class="material-symbols-outlined">bookmark</span>
+						&nbsp;&nbsp;&nbsp;<b>Featured</b>
+					</div>
+					<div class="media-box-content">
+						<div class="media-box-text">My son Christopher McGraw wrote a poem for his English class: 
+
+							Effects of Racism on a 15 Year Old Youth
+							
+							Can’t go no where without a stare, 
+							
+							Not everyone is stealing there, 
+							
+							Walkin throu</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Angela.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								Pamela</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">Community</button><button type="button"
+								class="btn btn-default">Faith</button><button type="button"
+								class="btn btn-default">Religion</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box Featured">
+					<div class="media-box-content">
+						<div class="media-box-title">Henry & Lucy Breckenridge (Roslyn, Washington)</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-5.jpg"></div>
+					</div>
+					<div class="media-box-footer"><span class="material-symbols-outlined">bookmark</span>
+						&nbsp;&nbsp;&nbsp;<b>Featured</b>
+					</div>
+					<div class="media-box-content">
+						<div class="media-box-text">My son Christopher McGraw wrote a poem for his English class: 
+
+							Effects of Racism on a 15 Year Old Youth
+							
+							Can’t go no where without a stare, 
+							
+							Not everyone is stealing there, 
+							
+							Walkin throu</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Angela.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								Pamela</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">Community</button><button type="button"
+								class="btn btn-default">Faith</button><button type="button"
+								class="btn btn-default">Religion</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box Featured">
+					<div class="media-box-content">
+						<div class="media-box-title">The Day Before Grandpa Went To World War I</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-6.jpg"></div>
+					</div>
+					<div class="media-box-footer"><span class="material-symbols-outlined">bookmark</span>
+						&nbsp;&nbsp;&nbsp;<b>Featured</b>
+					</div>
+					<div class="media-box-content">
+						<div class="media-box-text">My son Christopher McGraw wrote a poem for his English class: 
+
+							Effects of Racism on a 15 Year Old Youth
+							
+							Can’t go no where without a stare, 
+							
+							Not everyone is stealing there, 
+							
+							Walkin throu</div>
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Angela.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								Pamela</strong></div>
+						<div class="media-box-categories"><button type="button" class="btn btn-default">Community</button><button type="button"
+								class="btn btn-default">Faith</button><button type="button"
+								class="btn btn-default">Religion</button></div>
+					</div>
+				</div>				
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">My Grandfather Earlie Palmer: Mr. Juneteenth</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-7.jpg"></div>
+					</div>
+					
+					<div class="media-box-content">						
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Christopher.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								
+Linda</strong></div>
+						<div class="media-box-categories"><button type="button"
+								class="btn btn-default">Military</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">The Brigade-A fight to end all Wars</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-8.jpg"></div>
+					</div>
+					
+					<div class="media-box-content">						
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Christopher.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								
+Linda</strong></div>
+						<div class="media-box-categories"><button type="button"
+								class="btn btn-default">Military</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">Dear Mary, Dear Luther: A Courtship in Letters</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-9.jpg"></div>
+					</div>
+					
+					<div class="media-box-content">						
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Christopher.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								
+Linda</strong></div>
+						<div class="media-box-categories"><button type="button"
+								class="btn btn-default">Military</button></div>
+					</div>
+				</div>
+
+				<!-- -------------------------- BOX MARKUP -------------------------- -->
+				<div class="media-box">
+					<div class="media-box-content">
+						<div class="media-box-title">Documents galore!</div>
+					</div>
+					<div class="media-box-image">
+						<div data-thumbnail="gallery/thumbnails/thumb-10.jpg"></div>
+					</div>
+					
+					<div class="media-box-content">						
+						<div style="margin-top: 15px; margin-bottom: 15px;"><img src="gallery/icon/Christopher.jpg"
+								class="writer-avatar" alt="...">&nbsp;&nbsp;<strong
+								style="font-size:18px;font-weight:900;">
+								
+Linda</strong></div>
+						<div class="media-box-categories"><button type="button"
+								class="btn btn-default">Maya</button></div>
+					</div>
+				</div>
+
+
+
+			</div> <!-- #grid -->
+
+			<!--  ================== END MEDIA BOXES ================== -->
+
+		</div> <!-- grid-container -->
+
+	</div>
+
+	<div class="section">
+		<div class="content">
+			<div class="jumbotron">
+				<h1 class="display-4">Get started today</h1>				
+				<hr class="my-4">
+				<p>Your history is Western Australian history. Share stories of the people, places, and moments that shape our community.
+				</p>
+				<hr class="my-4">
+				<p class="lead">
+				  <a class="btn btn-primary btn-lg" href="#" role="button">Share your Story</a>
+				</p>
+			  </div>
+		</div>
+	</div>
+
+	<div class="grid-section footer">
+		<div class="content">
+			© 2022 State Library of Western Australia.
+		</div>
+	</div>
+
+	<div class="fixed fancybox-compensate-for-scrollbar">
+		<div class="to-top">
+			<i class="glyphicon glyphicon-chevron-up"></i>
+		</div>
+	</div>
+
+	<!-- jQuery 1.8+ -->
+	<script src="plugin/components/jQuery/jquery-3.6.0.min.js"></script>
+
+	<!-- Media Boxes JS files -->
+	<script src="plugin/components/Isotope/jquery.isotope.min.js"></script>
+	<script src="plugin/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
+	<script src="plugin/components/Transit/jquery.transit.min.js"></script>
+	<script src="plugin/components/jQuery Easing/jquery.easing.js"></script>
+	<script src="plugin/components/jQuery Visible/jquery.visible.min.js"></script>
+	<script src="plugin/components/Modernizr/modernizr.custom.min.js"></script>
+	<script src="plugin/components/Fancybox/jquery.fancybox.min.js"></script> <!-- only if you use Fancybox -->
+	<script src="plugin/js/jquery.mediaBoxes.dropdown.js"></script>
+	<script src="plugin/js/jquery.mediaBoxes.js"></script>
+
+	<script>
+
+		$('#grid').mediaBoxes({
+			filterContainer: '#filter',
+			search: '#search',
+			sortContainer: '#sort',
+			columns: 3,
+			boxesToLoadStart: 7,
+			boxesToLoad: 6,
+			horizontalSpaceBetweenBoxes: 30,
+			verticalSpaceBetweenBoxes: 30,
+			getSortData: {
+				title: '.media-box-title',
+				categories: '.media-box-categories'
+			},
+			minBoxesPerFilter: 999,
+			overlayEffect: 'fade',
+			animation_on_thumbnail_overlay_hover: [
+				{ item: '.fa', animation: 'from-bottom' }
+			],
+		});
+
+	</script>
+
+	<!-- Bootstrap JS file -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="js/demo.js"></script>
+
+</body>
+
+</html>
